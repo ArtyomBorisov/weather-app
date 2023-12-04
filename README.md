@@ -62,6 +62,7 @@ Before running project you should set environment variables in application.yaml
 Execute the following command to build the project and create the Docker image:
 
 ```
+mvn clean install
 docker-compose up
 ```
 
