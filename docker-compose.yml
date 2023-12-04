@@ -1,0 +1,20 @@
+version: '3.5'
+services:
+  weather-app:
+    build: .
+    image: weather-app-1.0.0
+    container_name: weather-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: weather_db
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - "3308:3306"
+    expose:
+      - "3308"
